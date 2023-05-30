@@ -18,6 +18,7 @@ public class RegisterClientService {
 	@Autowired
 	private ClientRepository clientRepository;
 	
+	// need test
 	@Transactional
 	public void save(Client client) {
 		clientRepository.findByCpf(client.getCpf())
@@ -27,15 +28,31 @@ public class RegisterClientService {
 		clientRepository.save(client);
 	}
 	
+	// need test
 	@Transactional
-	public void delete(Long id) {
-		Client clientActive = findOrFail(id);
+	public void deactivateById(Long id) {
+		Client clientActive = findOrFailById(id);
+		clientActive.setStatus("INACTIVE");
+	}
+	
+	// need test
+	public Client findOrFailById(Long id) {
+		return clientRepository.findById(id).orElseThrow(
+				() -> new ClientNotFoundException(id));
+	}
+	
+	// need test
+	@Transactional
+	public void deactivateByCpf(String cpf) {
+		Client clientActive = findOrFailByCpf(cpf);
 		clientActive.setStatus("INACTIVE");
 		
 	}
 	
-	public Client findOrFail(Long id) {
-		return clientRepository.findById(id).orElseThrow(
-				() -> new ClientNotFoundException(id));
+	// need test
+	public Client findOrFailByCpf(String Cpf) {
+		return clientRepository.findByCpf(Cpf).orElseThrow(
+				() -> new ClientNotFoundException(Cpf));
 	}
+	
 }
