@@ -1,0 +1,8 @@
+package com.stoica.medicateproject.domain.model;
+
+public enum PatientStatus {
+
+	ACTIVE, 
+	INACTIVE
+	
+}

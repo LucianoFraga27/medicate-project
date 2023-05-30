@@ -1,0 +1,26 @@
+package com.stoica.medicateproject.domain.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.stoica.medicateproject.domain.model.Client;
+import com.stoica.medicateproject.domain.respoitory.ClientRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class RegisterClientService {
+
+	@Autowired
+	private ClientRepository clientRepository;
+	
+	@Transactional
+	public void save(Client client) {
+		if (clientRepository.findByCpf(client.getCpf()) != null) {
+			System.err.println("CPF ALREADY REGISTERED");
+		} else {
+			System.err.println("SUCESS");
+			clientRepository.save(client);
+		}
+	}
+}

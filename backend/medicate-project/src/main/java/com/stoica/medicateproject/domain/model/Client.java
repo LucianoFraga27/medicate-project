@@ -41,4 +41,6 @@ public class Client {
 	private Address address;
 	private Phone phone;
 	*/
+	
+	private String status;
 }

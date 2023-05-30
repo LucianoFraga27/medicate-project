@@ -1,0 +1,5 @@
+package com.stoica.medicateproject.domain.exception;
+
+public class BusinessRuleException {
+
+}
