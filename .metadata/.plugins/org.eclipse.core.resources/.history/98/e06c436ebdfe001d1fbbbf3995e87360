@@ -1,0 +1,5 @@
+package com.stoica.medicateproject.util;
+
+public class DatabaseCleaner {
+
+}

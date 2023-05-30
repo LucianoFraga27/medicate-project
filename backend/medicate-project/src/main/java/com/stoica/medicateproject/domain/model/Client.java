@@ -33,7 +33,7 @@ public class Client {
 	
 	private String name;
 	
-	private LocalDate birthDay;
+	private String birthday;
 	
 	/*
 	private String surname;
