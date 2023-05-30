@@ -1,0 +1,7 @@
+package com.stoica.medicateproject.domain.model;
+
+public class Client {
+
+	// In this case, the Client is the patient of the Doctor's Office.
+	
+}

@@ -1,0 +1,31 @@
+package com.stoica.medicateproject.domain.model;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Client {
+
+	// In this case, the Client is the patient of the Doctor's Office.
+	
+	private Long id;
+	
+	
+	// Considering that initially the project will be focused on a national scope,
+	// the document used to identify the patient will be the CPF (Cadastro de Pessoa
+	// Física), which is the individual taxpayer identification number in Brazil.
+	
+	private String cpf;
+	
+	
+	private String name;
+	
+	/*
+	private String surname;
+	private String sex;
+	private LocalDateTime birthDay;
+	private Address address;
+	private Phone phone;
+	*/
+}
