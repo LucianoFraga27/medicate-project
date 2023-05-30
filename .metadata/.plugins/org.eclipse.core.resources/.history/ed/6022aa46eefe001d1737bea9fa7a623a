@@ -1,0 +1,15 @@
+package com.stoica.medicateproject.domain.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public enum Sex {
+
+	    @JsonProperty("MAN")
+	    MAN,
+	    @JsonProperty("WOMAN")
+	    WOMAN,
+	    @JsonProperty("OTHER")
+	    OTHER
+	    
+    }
+

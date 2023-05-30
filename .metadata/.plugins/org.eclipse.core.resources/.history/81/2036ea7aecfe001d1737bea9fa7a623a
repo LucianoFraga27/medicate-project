@@ -1,0 +1,17 @@
+package com.stoica.medicateproject.domain.model;
+
+public enum Sex {
+
+	MAN, WOMAN, OTHER;
+
+	public static Sex fromString(String value) {
+        if (value.equalsIgnoreCase("MAN")) {
+            return MAN;
+        } else if (value.equalsIgnoreCase("WOMAN")) {
+            return WOMAN;
+        } else if (value.equalsIgnoreCase("OTHER")) {
+        	return OTHER;
+        }
+        throw new IllegalArgumentException("Invalid value for Sex enum: " + value);
+    }
+}

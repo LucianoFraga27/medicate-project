@@ -1,0 +1,7 @@
+package com.stoica.medicateproject.domain.model;
+
+public enum Sex {
+
+	MAN, WOMAN, OTHER
+
+}
