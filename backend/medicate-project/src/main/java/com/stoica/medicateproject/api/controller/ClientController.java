@@ -1,6 +1,5 @@
 package com.stoica.medicateproject.api.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +24,21 @@ public class ClientController {
 	@Autowired
 	private RegisterClientService clientService;
 	
-	@GetMapping
+	
+	@GetMapping("/all")
 	public List<Client> findAll(){
 		return clientRepository.findAll();
 	}
 	
-	// incluir para listar apenas os ativos e os inativos
+	@GetMapping("/active")
+	public List<Client> findActiveClients(){
+		return clientRepository.findActiveClients();
+	}
+	
+	@GetMapping("/inactive")
+	public List<Client> findInativeClients(){
+		return clientRepository.findInativeClients();
+	}
 	
 	// need test
 	@PostMapping
