@@ -1,0 +1,49 @@
+package com.stoica.medicateproject.api.controller;
+
+import java.time.OffsetDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.stoica.medicateproject.domain.model.Client;
+import com.stoica.medicateproject.domain.model.MedicalAppointment;
+import com.stoica.medicateproject.domain.respoitory.MedicalAppointmentRepository;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/medicalappointment")
+public class MedicalAppointmentController {
+	 
+	OffsetDateTime currentDateTime = OffsetDateTime.now();
+	
+	@Autowired
+	private MedicalAppointmentRepository medicalAppointmentRepository;
+	
+	@GetMapping("/all")
+	public List<MedicalAppointment> findAll(){
+		return medicalAppointmentRepository.findAll();
+	}
+	
+	@GetMapping("/future")
+	public List<MedicalAppointment> getFutureAppointments(){
+		return medicalAppointmentRepository.getFutureAppointments(currentDateTime);
+	}
+	
+	@GetMapping("/past")
+	public List<MedicalAppointment> getPastAppointments(){
+		return medicalAppointmentRepository.getPastAppointments(currentDateTime);
+	}
+	
+	@PostMapping("/add")
+	public MedicalAppointment addMedicalAppointment(@RequestBody @Valid MedicalAppointment medicalAppointment) {
+		return medicalAppointmentRepository.save(medicalAppointment);
+	}
+	
+}

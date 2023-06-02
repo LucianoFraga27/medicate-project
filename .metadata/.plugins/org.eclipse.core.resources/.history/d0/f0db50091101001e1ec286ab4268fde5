@@ -1,0 +1,9 @@
+package com.stoica.medicateproject.domain.respoitory;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.stoica.medicateproject.domain.model.MedicalAppointment;
+
+public interface MedicalAppointmentRepository extends JpaRepository<MedicalAppointment, Long>{
+
+}

@@ -1,0 +1,5 @@
+package com.stoica.medicateproject.api.controller;
+
+public class MedicalAppointmentController {
+
+}

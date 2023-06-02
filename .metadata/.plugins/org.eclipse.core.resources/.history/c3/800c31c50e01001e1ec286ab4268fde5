@@ -1,0 +1,23 @@
+package com.stoica.medicateproject.api.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.stoica.medicateproject.domain.model.Client;
+import com.stoica.medicateproject.domain.model.MedicalAppointment;
+import com.stoica.medicateproject.domain.respoitory.MedicalAppointmentRepository;
+
+@RestController
+@RequestMapping("/medicalappointment")
+public class MedicalAppointmentController {
+	
+	private MedicalAppointmentRepository medicalAppointmentRepository;
+	
+	@GetMapping("/all")
+	public List<MedicalAppointment> findAll(){
+		return medicalAppointmentRepository.findAll();
+	}
+}

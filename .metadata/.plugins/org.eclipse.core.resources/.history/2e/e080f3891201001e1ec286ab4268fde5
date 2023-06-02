@@ -1,0 +1,5 @@
+package com.stoica.medicateproject.domain.service;
+
+public class MedicalApointmentService {
+
+}
