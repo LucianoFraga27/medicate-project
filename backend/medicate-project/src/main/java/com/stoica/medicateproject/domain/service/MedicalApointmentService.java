@@ -9,12 +9,24 @@ import org.springframework.stereotype.Service;
 import com.stoica.medicateproject.domain.model.MedicalAppointment;
 import com.stoica.medicateproject.domain.respoitory.MedicalAppointmentRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class MedicalApointmentService {
 
 	@Autowired
 	private MedicalAppointmentRepository medicalAppointmentRepository;
 	
+	@Transactional
+	public void createAppointmentById (Long id_client) {
+		
+	}
+	
+	@Transactional
+	public void createAppointmentByCpf (String cpf) {
+		
+	}
+		
 	public  OffsetDateTime currentDateTime = OffsetDateTime.now();
 	
 	public List<MedicalAppointment> getFutureAppointments(){
